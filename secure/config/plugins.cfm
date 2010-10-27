@@ -1,2 +1,2 @@
-<cfset add("/plugins/security") />
-<cfset add("/plugins/tabs") />
+<cfset add("security") />
+<cfset add("tabs") />
