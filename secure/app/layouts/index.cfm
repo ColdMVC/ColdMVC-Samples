@@ -7,8 +7,11 @@
 		<c:style name="style.css" />
 	</head>
 	<body>
-		<c:tabs id="navigation" />
+		<div id="tabs">
+			<c:tabs />
+		</div>
 		<div id="content">
+			<c:flash />
 			<c:render />
 		</div>
 	</body>

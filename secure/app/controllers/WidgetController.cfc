@@ -12,14 +12,6 @@ component {
 
 	}
 
-	function sayHello(required string name) {
-		return "Hello #arguments.name#";
-	}
-
-	function sayGoodbye(required string name) {
-		return "Goodbye #arguments.name#";
-	}
-
 	function save() {
 
 		var widget = _Widget.get(params.widget.id, params.widget);

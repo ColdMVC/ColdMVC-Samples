@@ -1,7 +1,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 								   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class entity-name="Gadget" lazy="true" name="cfc:secure.app.model.Gadget" table="Gadget">
+	<class entity-name="Gadget" lazy="true" name="cfc:app.model.Gadget" table="Gadget">
 		<id name="id" type="int">
 			<column name="ID" />
 			<generator class="identity" />
@@ -10,7 +10,7 @@
 			<column name="Name" />
 		</property>
 	</class>
-	<class entity-name="Widget" lazy="true" name="cfc:secure.app.model.Widget" table="Widget">
+	<class entity-name="Widget" lazy="true" name="cfc:app.model.Widget" table="Widget">
 		<id name="id" type="int">
 			<column name="ID" />
 			<generator class="identity" />
@@ -19,7 +19,7 @@
 			<column name="Name" />
 		</property>
 	</class>
-	<class entity-name="Role" lazy="true" name="cfc:secure.app.model.Role" table="Role">
+	<class entity-name="Role" lazy="true" name="cfc:app.model.Role" table="Role">
 		<id name="id" type="int">
 			<column name="ID" />
 			<generator class="identity" />
@@ -29,10 +29,10 @@
 		</property>
 		<bag cascade="all" lazy="true" name="users" table="User_Role">
 			<key column="Role_ID" />
-			<many-to-many class="cfc:secure.app.model.User" column="User_ID" />
+			<many-to-many class="cfc:app.model.User" column="User_ID" />
 		</bag>
 	</class>
-	<class entity-name="User" lazy="true" name="cfc:secure.app.model.User" table="`User`">
+	<class entity-name="User" lazy="true" name="cfc:app.model.User" table="`User`">
 		<id name="id" type="int">
 			<column name="ID" />
 			<generator class="identity" />
@@ -45,7 +45,7 @@
 		</property>
 		<bag cascade="all" lazy="true" name="roles" table="User_Role">
 			<key column="User_ID" />
-			<many-to-many class="cfc:secure.app.model.Role" column="Role_ID" />
+			<many-to-many class="cfc:app.model.Role" column="Role_ID" />
 		</bag>
 	</class>
 </hibernate-mapping>

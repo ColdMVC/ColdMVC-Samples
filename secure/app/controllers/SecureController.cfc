@@ -72,4 +72,15 @@ component {
 		redirect({action="index"});
 	}
 
+	/**
+	 * @events unauthorizedRequest
+	 */
+	function unauthorizedRequest() {
+
+		flash.message = "You must be logged in to see that page";
+
+		redirect({controller="secure", action="index"});
+
+	}
+
 }
