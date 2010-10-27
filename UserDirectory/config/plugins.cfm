@@ -1,1 +1,2 @@
-<cfset add("/coldmvc/plugins/validation") />
+<cfset add("assets") />
+<cfset add("validation") />
