@@ -48,6 +48,9 @@ component {
 		params.post = _Post.findByLink(params.link);
 	}
 
+	/**
+	 * @ajaxLayout modal
+	 */
 	function list() {
 
 		var paging = $.paging.options();

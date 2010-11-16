@@ -12,8 +12,8 @@
 			</cfif>
 		</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		#renderCSS("reset.css")#
-		#renderCSS("blog.css")#
+		<c:style name="reset.css" />
+		<c:style name="blog.css" />
 	</head>
 	<body>
 		<div id="navigation">
@@ -33,7 +33,7 @@
 							#params.message#
 						</div>
 					</cfif>
-					#render()#
+					<c:render />
 				</div>
 			</div>
 			<div id="sidebar">
