@@ -9,7 +9,7 @@
 	<tbody>
 		<c:each in="#books#" do="book">
 			<tr>
-				<td>#book.id()#</td>
+				<td><a href="#linkTo({action='show', id=book})#">#book.id()#</a></td>
 				<td>#book.title()#</td>
 				<td>#book.author()#</td>
 				<td><a href="#linkTo({action='edit', id=book})#">Edit</a></td>

@@ -8,4 +8,5 @@
 
 <a href="#linkTo({action='edit', id=book})#">Edit</a>
 <a href="#linkTo({action='delete', id=book})#">Delete</a>
+<a href="#linkTo({action='list'})#">Back to List</a>
 </cfoutput>
