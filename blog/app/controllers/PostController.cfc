@@ -30,14 +30,14 @@ component {
 
 		var paging = $.paging.options();
 
-		params.posts = _Post.findAllByCategoryID(params.id, {
+		params.posts = _Post.findAllByCategory(params.id, {
 			sort = "date",
 			order = "asc",
 			max = paging.max,
 			offset = paging.offset
 		});
 
-		var count = _Post.countByCategoryID(params.id);
+		var count = _Post.countByCategory(params.id);
 
 		params.page = paging.page;
 		params.pages = $.paging.pages(count);
