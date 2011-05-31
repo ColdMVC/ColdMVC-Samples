@@ -8,7 +8,7 @@ component {
 
 	function index() {
 
-		params.categories = _Category.findAllWithPosts({
+		params.categories = _Category.list({
 			sort = "name"
 		});
 
