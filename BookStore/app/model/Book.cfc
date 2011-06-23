@@ -6,7 +6,7 @@ component {
 
 	/**
 	 * @fieldtype id
-	 * @generator increment
+	 * @generator identity
 	 */
 	property id;
 	property title;
