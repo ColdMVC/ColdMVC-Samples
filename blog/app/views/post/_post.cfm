@@ -4,7 +4,7 @@
 	<div class="info">
 		Posted on #post.displayDate()# by Tony Nelson
 	</div>
-	<cfif post.has("categories")>
+	<cfif arrayLen(post.categories())>
 		<div class="categories">
 			Categories:
 			<c:each in="#post.categories()#" value="category" index="i" count="count">
