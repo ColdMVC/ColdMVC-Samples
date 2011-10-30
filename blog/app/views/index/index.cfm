@@ -11,6 +11,6 @@
 
 <cfset page = paginator.getPage() />
 <cfif page lt paginator.getPageCount()>
-	<cfset next = page + 1 />	<a href="#linkTo({page=next})#">Older Posts</a></cfif><cfif page gt 1>
-	<cfset previous = page - 1 />	<a href="#linkTo({page=previous})#">Newer Posts</a></cfif>
+	<cfset next = page + 1 />	<a href="?page=#next#">Older Posts</a></cfif><cfif page gt 1>
+	<cfset previous = page - 1 />	<a href="?page=#previous#">Newer Posts</a></cfif>
 </cfoutput>

@@ -5,6 +5,10 @@
 	},
 	toParam = {
 		id = "getLink"
+	},
+	filter = {
+		class = "app.model.RoutingFilter",
+		method = "filterPost"
 	}
 }) />
 
@@ -15,5 +19,9 @@
 	},
 	toParam = {
 		id = "getLink"
+	},
+	filter = {
+		class = "app.model.RoutingFilter",
+		method = "filterCategory"
 	}
 }) />

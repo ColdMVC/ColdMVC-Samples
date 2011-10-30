@@ -34,7 +34,7 @@ component {
 
 	function show() {
 
-		params.post = _Post.findByLink(params.id);
+		params.post = _Post.get(params.id);
 
 	}
 
@@ -78,7 +78,7 @@ component {
 
 	function category() {
 
-		params.category = _Category.findByLink(params.id);
+		request.debug = true;
 
 		var query = _Post.createQuery({
 			sort = "date",
@@ -87,8 +87,12 @@ component {
 
 		query.innerJoin("categories", "category");
 		query.where(
-			query.eq("category.link", params.id)
+			query.eq("category.id", params.id)
 		);
+
+		params.category = _Category.get(params.id);
+
+
 
 		params.paginator = createPaginator(query, {
 			max = 5
