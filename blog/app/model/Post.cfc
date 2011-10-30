@@ -5,15 +5,7 @@
 component  {
 
 	property id;
-
-	/**
-	 * @NotNull
-	 */
 	property title;
-
-	/**
-	 * @NotNull
-	 */
 	property body;
 	property date;
 	property link;
@@ -21,8 +13,10 @@ component  {
 	property comments;
 
 	function preInsert() {
+
 		setDate(now());
 		setLink(createLink());
+
 	}
 
 	private function createLink() {
@@ -45,7 +39,7 @@ component  {
 
 		// if there are posts with the same link, append the count to the end
 		if (arrayLen(links) > 0) {
-			link = link & "--" & arrayLen(links)+1;
+			link = link & "--" & arrayLen(links) + 1;
 		}
 
 		return link;

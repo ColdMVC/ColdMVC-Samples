@@ -1,6 +1,5 @@
 /**
  * @accessors true
- * @extends coldmvc.LayoutController
  */
 component {
 
@@ -8,9 +7,11 @@ component {
 
 	function index() {
 
-		params.categories = _Category.list({
-			sort = "name"
-		});
+		var query = _Category.createQuery();
+		query.select("distinct category");
+		query.innerJoin("posts", "post");
+
+		params.categories = query.list();
 
 	}
 

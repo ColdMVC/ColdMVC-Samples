@@ -1,7 +1,9 @@
 /**
- * @extends coldmvc.Controller
+ * @accessors true
  */
 component {
+
+	property _Book;
 
 	function add() {
 

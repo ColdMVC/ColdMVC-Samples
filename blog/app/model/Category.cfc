@@ -1,6 +1,8 @@
 /**
-* @extends coldmvc.Model
-* @persistent true
+ * @extends coldmvc.Model
+ * @persistent true
+ * @sort name
+ * @order asc
 */
 component  {
 
@@ -10,7 +12,9 @@ component  {
 	property posts;
 
 	function preInsert() {
+
 		setLink(createLink());
+
 	}
 
 	private function createLink() {

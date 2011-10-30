@@ -1,29 +1,19 @@
 <cfoutput>
-<cfset event = $.event.get() />
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<title>
-			<cfif event.controller eq "posts" and event.action eq "show">
-				Bears. Beets. Battlestar Galactica.: #post.title()#
-			<cfelse>
-				Bears. Beets. Battlestar Galactica.
-			</cfif>
-		</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<c:doctype />
+<c:html>
+	<c:head>
 		<c:style name="reset.css" />
 		<c:style name="blog.css" />
-	</head>
-	<body>
+	</c:head>
+	<c:body>
 		<div id="navigation">
 			<ul>
-				<li><a href="#linkTo('/post/create')#">New Post</a></li>
+				<li><a href="#linkTo({action='create'})#">New Post</a></li>
 				<li>Sign In</li>
 			</ul>
 		</div>
 		<div id="header">
-			<h1><a href="#linkTo('/post/list')#">Bears. Beets. Battlestar Galactica.</a></h1>
+			<h1><a href="#linkTo({action='index'})#">Bears. Beets. Battlestar Galactica.</a></h1>
 		</div>
 		<div id="wrapper">
 			<div id="content">
@@ -44,7 +34,7 @@
 							Tony Nelson
 						</span>
 						<span class="profile">
-							 ColdFusion developer working at ImageTrend, Inc in Minneapolis, MN
+							 ColdFusion developer working at The Nerdery in Minneapolis, MN
 						</span>
 					</div>
 				</div>
@@ -53,7 +43,7 @@
 						<h4>Categories</h4>
 						<ul>
 							<c:each in="#categories#" value="category">
-								<li><a href="#categoryURL(category)#">#category.name()# (#arrayLen(category.posts())#)</a></li>
+								<li><a href="#linkTo({action='category', id=category})#">#category.name()# (#arrayLen(category.posts())#)</a></li>
 							</c:each>
 						</ul>
 					</div>
@@ -64,6 +54,6 @@
 		<div id="footer">
 			&copy; #year(now())# Tony Nelson
 		</div>
-	</body>
-</html>
+	</c:body>
+</c:html>
 </cfoutput>

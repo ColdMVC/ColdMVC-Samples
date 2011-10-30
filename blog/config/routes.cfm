@@ -1,25 +1,19 @@
-<cfset add("/:year/:month/:day/:slug", {
-	name = "post",
-	defaults = {
-		controller = "post",
+<cfset add("/post/:id*", {
+	params = {
+		controller = "index",
 		action = "show"
 	},
-	requirements = {
-		year = "\d{4}"
-	},
-	computed = {
-		link = ":year/:month/:day/:slug"
-	},
-	model = "post",
-	generates = "/:id.link()"
+	toParam = {
+		id = "getLink"
+	}
 }) />
 
-<cfset add("/category/:link", {
-	name = "category",
-	defaults = {
-		controller = "post",
+<cfset add("/category/:id", {
+	params = {
+		controller = "index",
 		action = "category"
 	},
-	model = "category",
-	generates = "/category/:id.link()"
+	toParam = {
+		id = "getLink"
+	}
 }) />
