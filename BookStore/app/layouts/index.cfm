@@ -1,12 +1,10 @@
 <c:doctype />
 <c:html>
-	<head>
-		<c:version />
-		<title>My Bookstore</title>
-		<c:content_type />
-	</head>
-	<body>
+	<c:head>
+		<c:title>My Bookstore</c:title>
+	</c:head>
+	<c:body>
 		<h1>My Bookstore</h1>
 		<c:render />
-	</body>
+	</c:body>
 </c:html>
